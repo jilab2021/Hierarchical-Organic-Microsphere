@@ -20,8 +20,8 @@ data([max_idx, min_idx, max_idy, min_idy], :) = [];
 points_x = data(:, 6);  
 points_y = data(:, 7);  
 
-disp(['Analyzed particle identification:', filename(1:end-4)]);
-disp(['Spherical coordinates.:(', num2str(center_x), ',',num2str(center_y),')']);
+disp(['Analyzed particle identification: ', filename(1:end-4)]);
+disp(['Center coordinates：(', num2str(center_x), ',',num2str(center_y),')']);
 if a == b %spherical model
     diameter = a;
     radius = diameter / 2; 
