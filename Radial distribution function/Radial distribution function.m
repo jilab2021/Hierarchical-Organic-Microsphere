@@ -53,9 +53,9 @@ numberDensity = number / (pi * rMax^2); % 原子数密度
 gNormalized = g ./ (areaFraction * numberDensity);
 
 % 将数据写入 Excel 表格  
-filename = 'RDF.xlsx';  % Excel 文件名  
+output_filename2 = fullfile(pathname, [filename(1:end-4), '_RDF.csv']);  
 sheet = 'Sheet1';        % 工作表名  
 result = [r', gNormalized'];  
 % 使用 writematrix 函数将数值矩阵写入 Excel  
 writematrix(result, filename, 'Sheet', sheet);  
-   
+ 
