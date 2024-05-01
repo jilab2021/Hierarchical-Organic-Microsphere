@@ -49,13 +49,10 @@ end
   
 % Normalize the radial distribution function 
 areaFraction = pi * (2*r*dr + dr^2); % Volume of each spherical shell
-numberDensity = number / (pi * rMax^2); % 原子数密度  
+numberDensity = number / (pi * rMax^2); % Density 
 gNormalized = g ./ (areaFraction * numberDensity);
 
-% 将数据写入 Excel 表格  
-output_filename2 = fullfile(pathname, [filename(1:end-4), '_RDF.csv']);  
-sheet = 'Sheet1';        % 工作表名  
-result = [r', gNormalized'];  
-% 使用 writematrix 函数将数值矩阵写入 Excel  
-writematrix(result, filename, 'Sheet', sheet);  
+output_filename2 = fullfile(pathname, [filename(1:end-4), '_RDF.csv']);
+RDF_result = [r', gNormalized'];  
+csvwrite(output_filename2, RDF_result); 
  
